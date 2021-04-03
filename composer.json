@@ -1,18 +1,13 @@
 {
    "name":"hexlet/code",
-   "authors":[
+   "bin":["bin/brain-games"],
+   "authors": [
       {
-         "name":"Makarov Vyacheslav",
-         "email":"novapc@ukr.net"
+	"name":"Makarov Vyacheslav",
+	"email":"novapc@ukr.net"
       }
    ],
-   "require":{
-      
-   },
-   "bin":[
-      "bin/brain-games"
-   ],
-   "license":[
-      "MIT"
-   ]
+   "description": "hexlet brain-games",
+   "license": "MIT",
+   "require":{}
 }
