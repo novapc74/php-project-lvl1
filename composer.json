@@ -1,0 +1,10 @@
+{
+    "name": "hexlet/code",
+    "authors": [
+        {
+            "name": "Makarov Vyacheslav",
+            "email": "novapc@ukr.net"
+        }
+    ],
+    "require": {}
+}
