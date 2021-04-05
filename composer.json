@@ -15,10 +15,10 @@
       "phpcs": "phpcs",
       "phpcbf": "phpcbf"
    },
-   "autoload":{
-      "psr-4": {
-        "Brain\\Games\\Cli\\" : "src"
-      }
+   "autoload": {
+   		"psr-4": {
+   			"Brain\\Games\\" : "src"
+   		}
    },
    "require":{
       "wp-cli/php-cli-tools":"^0.11.12"
