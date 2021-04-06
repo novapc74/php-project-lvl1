@@ -2,7 +2,7 @@ install:
 	composer install
 
 brain-games:
-	./bin/brain-games
+	@./bin/brain-games
 
 validate:
 	@composer validate
@@ -12,4 +12,10 @@ lint:
 	
 lintFix:
 	@composer run-script phpcbf -- --standard=PSR12 src bin
+	
+brain-even:
+	@./bin/brain-even
+
+tree:
+	@tree -L 1
 
