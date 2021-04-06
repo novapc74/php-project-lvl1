@@ -14,14 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Install MAKE
-      run: apt install make
-    
     - name: Composer update
       run: composer update
 
     - name: Start PHP_CodeSniffer
-      run: make lint
+      run: composer run-script phpcs -- --standard=PSR12 src bin
 
     - name: Cache Composer packages
       id: composer-cache
