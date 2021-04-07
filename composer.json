@@ -1,28 +1,29 @@
 {
-   "name":"hexlet/code",
-   "bin":[
-      "bin/brain-games",
-      "bin/brain-even"
-   ],
+   "name":"novapc74/brain-even",
+   "homepage": "https://github.com/novapc74/php-project-lvl1.git",
+   "description":"hexlet brain-games",
+   "license":"MIT",
    "authors":[
       {
          "name":"Makarov Vyacheslav",
          "email":"novapc@ukr.net"
       }
    ],
-   "description":"hexlet brain-games",
-   "license":"MIT",
+   "require":{
+      "wp-cli/php-cli-tools":"^0.11.12"
+   },
+   "require-dev": {
+      "squizlabs/php_codesniffer": "^3.5"
+   },
+   "bin":[
+      "bin/brain-games",
+      "bin/brain-even"
+   ],
+   "autoload": {
+         "files":["src/Cli.php", "src/evenlogic.php"]
+   },
    "scripts": {
       "phpcs": "phpcs",
       "phpcbf": "phpcbf"
-   },
-   "autoload": {
-   		"files":["src/Cli.php", "src/evenlogic.php"]
-   },
-   "require":{
-      "wp-cli/php-cli-tools":"^0.11.12"
-  },
-   "require-dev": {
-      "squizlabs/php_codesniffer": "^3.5"
    }
 }
