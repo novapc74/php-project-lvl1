@@ -17,10 +17,16 @@
    },
    "bin":[
       "bin/brain-games",
-      "bin/brain-even"
+      "bin/brain-even",
+      "brain-calc"
    ],
    "autoload": {
-         "files":["src/Cli.php", "src/evenlogic.php"]
+         "files":[
+            "src/Engine.php",
+            "src/Games/Cli.php",
+            "src/Games/even.php",
+            "src/Games/calc.php"
+         ]
    },
    "scripts": {
       "phpcs": "phpcs",

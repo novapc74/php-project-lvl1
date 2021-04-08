@@ -1,20 +1,15 @@
 <?php
 
-    namespace Brain\Even\Evenlogic;
+    namespace Brain\Games\Even;
 
     use function cli\line;
     use function cli\prompt;
+    use function Brain\Games\Engine\sayHello;
 
-function sayHello()
+function runGameEven()
 {
-    line('Welcome to the Brain Game!');
-    $nameUser = prompt('May I have your name?');
-    line("Hello, %s!", $nameUser);
-    return ($nameUser);
-}
+    $nameUser = sayHello();
 
-function questionEven($nameUser)
-{
     line('Answer "yes" if the number is even, otherwise answer "no".');
     for ($i = 0; $i < 3; $i++) {
         line('Question: %s', $randomNumber = rand(1, 99));
