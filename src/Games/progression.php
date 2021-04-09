@@ -19,19 +19,17 @@ function runGameProgression()
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
         $randNum = dataGenerator();
         $test = $randNum[3];
-        $correctAnswer = strval($test[$randNum[0]]);
-        $test[$randNum[0]] = '..' ;
+        $correctAnswer = strval($test[$randNum[0] - 1]);
+        $test[$randNum[0] - 1] = '..' ;
         $strArr = '';
         foreach ($test as $value) {
             $strArr = $strArr . " " . $value;
         }
         line('Question: %s', $strArr);
         $answerUser = prompt('Your answer');
-        if ($correctAnswer === $answerUser) {
-            returnResult([1]);
-        } else {
-            return(returnResult([$nameUser, $answerUser, $correctAnswer]));
+        returnResult($nameUser, $correctAnswer, $answerUser);
+        if ($i === NUMBER_ROUNDS - 1) {
+            line('Congratulations, %s!', $nameUser);
         }
     }
-    return(returnResult([$nameUser, '', '', '']));
 }

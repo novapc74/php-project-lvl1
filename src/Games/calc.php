@@ -33,11 +33,9 @@ function runGameCalc()
             $correctAnswer = strval($randNum[0] * $randNum[1]);
         }
         $answerUser = prompt('Your answer');
-        if ($correctAnswer === $answerUser) {
-            returnResult([1]);
-        } else {
-            return(returnResult([$nameUser, $answerUser, $correctAnswer]));
+        returnResult($nameUser, $correctAnswer, $answerUser);
+        if ($i === NUMBER_ROUNDS - 1) {
+            line('Congratulations, %s!', $nameUser);
         }
     }
-    return(returnResult([$nameUser, '', '', '']));
 }

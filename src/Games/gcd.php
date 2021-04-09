@@ -26,11 +26,9 @@ function runGameGcd()
             }
         }
         $answerUser = prompt('Your answer');
-        if ($correctAnswer === $answerUser) {
-            returnResult([1]);
-        } else {
-            return(returnResult([$nameUser, $answerUser, $correctAnswer]));
+        returnResult($nameUser, $correctAnswer, $answerUser);
+        if ($k === NUMBER_ROUNDS - 1) {
+            line('Congratulations, %s!', $nameUser);
         }
     }
-    return(returnResult([$nameUser, '', '', '']));
 }
