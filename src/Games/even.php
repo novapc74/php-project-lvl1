@@ -21,7 +21,7 @@ function runGameEven()
         $result = $randNum[0] % 2;
         $result === 0 ? $correctAnswer = 'yes' : $correctAnswer = 'no';
         $answerUser = prompt('Your answer');
-        if (($result != 0 && $answerUser === 'no') || ($result === 0 && $answerUser === 'yes')) {
+        if ($correctAnswer === $answerUser) {
             returnResult([1]);
         } else {
             return(returnResult([$nameUser, $answerUser, $correctAnswer]));

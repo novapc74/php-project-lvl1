@@ -20,7 +20,6 @@ function runGameGcd()
         $randNum = dataGenerator();
         line('Question: %s %s', $randNum[0], $randNum[1]);
         $randNum[0] >= $randNum[1] ? $count = $randNum[1] : $count = $randNum[0];
-        echo "count = " . $count . "\n";
         for ($i = 1; $i < $count + 1; $i++) {
             if (($randNum[0] % $i) === 0 && ($randNum[1] % $i === 0)) {
                 $correctAnswer = strval($i);
