@@ -25,16 +25,15 @@ function runGameCalc()
             $operand = '*';
         }
         line('Question: %s %s %s', $randNum[0], $operand, $randNum[1]);
-        if ($operand ==='+') {
-            $result = $randNum[0] + $randNum[1];
+        if ($operand === '+') {
+            $correctAnswer = strval($randNum[0] + $randNum[1]);
         } elseif ($operand === '-') {
-            $result = $randNum[0] - $randNum[1];
+            $correctAnswer = strval($randNum[0] - $randNum[1]);
         } else {
-            $result = $randNum[0] * $randNum[1];
+            $correctAnswer = strval($randNum[0] * $randNum[1]);
         }
-        $correctAnswer = $result;
         $answerUser = prompt('Your answer');
-        if (strval($result) === $answerUser) {
+        if ($correctAnswer === $answerUser) {
             returnResult([1]);
         } else {
             return(returnResult([$nameUser, $answerUser, $correctAnswer]));

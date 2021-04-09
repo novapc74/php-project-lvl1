@@ -16,9 +16,9 @@ function runGameEven()
 
     line('Answer "yes" if the number is even, otherwise answer "no".');
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
-        $randNum = dataGenerator()[0];
-        line('Question: %s', $randNum);
-        $result = $randNum % 2;
+        $randNum = dataGenerator();
+        line('Question: %s', $randNum[0]);
+        $result = $randNum[0] % 2;
         $result === 0 ? $correctAnswer = 'yes' : $correctAnswer = 'no';
         $answerUser = prompt('Your answer');
         if (($result != 0 && $answerUser === 'no') || ($result === 0 && $answerUser === 'yes')) {
