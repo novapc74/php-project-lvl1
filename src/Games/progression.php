@@ -25,6 +25,7 @@ function runGameProgression()
         foreach ($test as $value) {
             $strArr = $strArr . " " . $value;
         }
+        $strArr = trim($strArr);
         line('Question: %s', $strArr);
         $answerUser = prompt('Your answer');
         returnResult($nameUser, $correctAnswer, $answerUser);
