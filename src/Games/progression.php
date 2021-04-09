@@ -23,7 +23,7 @@ function runGameProgression()
         $test[$randNum[0]] = '..' ;
         $strArr = '';
         foreach ($test as $value) {
-            $strArr = $strArr . " ". $value;
+            $strArr = $strArr . " " . $value;
         }
         line('Question: %s', $strArr);
         $answerUser = prompt('Your answer');
