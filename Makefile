@@ -4,6 +4,12 @@ install:
 brain-games:
 	./bin/brain-games
 
+brain-even:
+	./bin/brain-even
+	
+brain-calc:
+	./bin/brain-calc
+
 validate:
 	composer validate
 
@@ -12,9 +18,6 @@ lint:
 	
 lintFix:
 	composer run-script phpcbf -- --standard=PSR12 src bin
-	
-brain-even:
-	./bin/brain-even
 
 tree:
 	tree -L 1

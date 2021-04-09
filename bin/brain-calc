@@ -9,3 +9,6 @@
             } else {
                 require_once $autoloadPath2;
         }
+    use function Brain\Games\Calc\runGameCalc;
+
+    runGameCalc();

@@ -17,8 +17,8 @@ function sayHello()
 
 function dataGenerator()
 {
-    $randFirstNum = rand(1, 99);
-    $randSecondNum = rand(1, 99);
+    $randFirstNum = rand(1, 10);
+    $randSecondNum = rand(1, 10);
     $randOperand = rand(1, 3); //   <<<--- заложено для calc.php, генерировать операнды
     $arrData = [$randFirstNum, $randSecondNum, $randOperand];
     return($arrData);
