@@ -20,7 +20,12 @@ function dataGenerator()
     $randFirstNum = rand(1, 10);
     $randSecondNum = rand(1, 10);
     $randOperand = rand(1, 3); //   <<<--- заложено для calc.php, генерировать операнды
-    $arrData = [$randFirstNum, $randSecondNum, $randOperand];
+    $randArray = [];
+    $randArray[0] = $randSecondNum;
+    for ($i = 0; $i < 9; $i++) {
+        $randArray[] = $randFirstNum + $randArray[$i];
+    }
+    $arrData = [$randFirstNum, $randSecondNum, $randOperand, $randArray];
     return($arrData);
 }
 

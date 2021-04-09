@@ -14,17 +14,18 @@ function runGameProgression()
 {
     $nameUser = sayHello();
 
-    line('Find the greatest common divisor of given numbers.');
+    line('What number is missing in the progression?');
 
-    for ($k = 0; $k < NUMBER_ROUNDS; $k++) {
+    for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
         $randNum = dataGenerator();
-        line('Question: %s %s', $randNum[0], $randNum[1]);
-        $randNum[0] >= $randNum[1] ? $count = $randNum[1] : $count = $randNum[0];
-        for ($i = 1; $i < $count + 1; $i++) {
-            if (($randNum[0] % $i) === 0 && ($randNum[1] % $i === 0)) {
-                $correctAnswer = strval($i);
-            }
+        $test = $randNum[3];
+        $correctAnswer = strval($test[$randNum[0]]);
+        $test[$randNum[0]] = '..' ;
+        $strArr = '';
+        foreach ($test as $value) {
+            $strArr = $strArr . " ". $value;
         }
+        line('Question: %s', $strArr);
         $answerUser = prompt('Your answer');
         if ($correctAnswer === $answerUser) {
             returnResult([1]);
