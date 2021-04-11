@@ -4,7 +4,7 @@
 
     use function Brain\Games\Engine\sayHello;
 
-function runBrainGames()
+function runBrainGames(): void
 {
     sayHello();
 }

@@ -10,7 +10,7 @@
 
     use const Brain\Games\Engine\NUMBER_ROUNDS;
 
-function runGameProgression()
+function runGameProgression(): void
 {
     $nameUser = sayHello();
 

@@ -29,13 +29,13 @@ function dataGenerator(): array
     return($arrData);
 }
 
-function returnResult(string $nameUser, string $correctAnswer, string $answerUser)
+function returnResult(string $nameUser, string $correctAnswer, string $answerUser): void
 {
     if ($correctAnswer != $answerUser) {
         line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answerUser, $correctAnswer);
         line("Let's try again, %s!", $nameUser);
-            return exit;
+            exit;
     } elseif ($correctAnswer === $answerUser) {
-        return(line('Correct!'));
+        line('Correct!');
     }
 }
