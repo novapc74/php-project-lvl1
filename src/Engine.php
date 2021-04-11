@@ -7,7 +7,7 @@
 
     const NUMBER_ROUNDS = 3;
 
-function sayHello()
+function sayHello(): string
 {
     line('Welcome to the Brain Games!');
     $nameUser = prompt('May I have your name?');
@@ -15,7 +15,7 @@ function sayHello()
     return ($nameUser);
 }
 
-function dataGenerator()
+function dataGenerator(): array
 {
     $randFirstNum = rand(2, 10);
     $randSecondNum = rand(1, 10);
@@ -34,7 +34,7 @@ function returnResult(string $nameUser, string $correctAnswer, string $answerUse
     if ($correctAnswer != $answerUser) {
         line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answerUser, $correctAnswer);
         line("Let's try again, %s!", $nameUser);
-            return(exit);
+            return exit;
     } elseif ($correctAnswer === $answerUser) {
         return(line('Correct!'));
     }
