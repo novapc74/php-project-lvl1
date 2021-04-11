@@ -7,6 +7,8 @@
 ### Linter:
 [![Linter](https://github.com/novapc74/php-project-lvl1/actions/workflows/linter.yml/badge.svg)](https://github.com/novapc74/php-project-lvl1/actions/workflows/linter.yml)
 
+### asciinema brain-games:
+https://asciinema.org/a/zIRSN3QtrQo03JFtZJHlYUVHv
 
 ### asciinema brain-even:
 https://asciinema.org/a/m8KpitCmafVjQ90E6CMQx5EC1

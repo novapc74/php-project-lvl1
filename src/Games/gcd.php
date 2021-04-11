@@ -1,14 +1,14 @@
 <?php
 
-    namespace Brain\Games\Gcd;
+namespace Brain\Games\Gcd;
 
-    use function cli\line;
-    use function cli\prompt;
-    use function Brain\Games\Engine\sayHello;
-    use function Brain\Games\Engine\dataGenerator;
-    use function Brain\Games\Engine\returnResult;
+use function cli\line;
+use function cli\prompt;
+use function Brain\Games\Engine\sayHello;
+use function Brain\Games\Engine\dataGenerator;
+use function Brain\Games\Engine\returnResult;
 
-    use const Brain\Games\Engine\NUMBER_ROUNDS;
+use const Brain\Games\Engine\NUMBER_ROUNDS;
 
 function runGameGcd(): void
 {

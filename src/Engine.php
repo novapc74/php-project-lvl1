@@ -1,11 +1,11 @@
 <?php
 
-    namespace Brain\Games\Engine;
+namespace Brain\Games\Engine;
 
-    use function cli\line;
-    use function cli\prompt;
+use function cli\line;
+use function cli\prompt;
 
-    const NUMBER_ROUNDS = 3;
+const NUMBER_ROUNDS = 3;
 
 function sayHello(): string
 {

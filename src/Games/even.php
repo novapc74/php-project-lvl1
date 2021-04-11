@@ -1,14 +1,14 @@
 <?php
 
-    namespace Brain\Games\Even;
+namespace Brain\Games\Even;
 
-    use function cli\line;
-    use function cli\prompt;
-    use function Brain\Games\Engine\sayHello;
-    use function Brain\Games\Engine\dataGenerator;
-    use function Brain\Games\Engine\returnResult;
+use function cli\line;
+use function cli\prompt;
+use function Brain\Games\Engine\sayHello;
+use function Brain\Games\Engine\dataGenerator;
+use function Brain\Games\Engine\returnResult;
 
-    use const Brain\Games\Engine\NUMBER_ROUNDS;
+use const Brain\Games\Engine\NUMBER_ROUNDS;
 
 function runGameEven(): void
 {
