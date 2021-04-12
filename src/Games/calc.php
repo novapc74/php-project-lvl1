@@ -1,20 +1,14 @@
 <?php
 
-    namespace Brain\Games\Calc;
+namespace Brain\Games\Calc;
 
-    use function cli\line;
-    use function cli\prompt;
-    use function Brain\Games\Engine\sayHello;
-    use function Brain\Games\Engine\dataGenerator;
-    use function Brain\Games\Engine\returnResult;
+use function Brain\Games\Engine\dataGenerator;
+use function Brain\Games\Engine\task;
+use const Brain\Games\Engine\NUMBER_ROUNDS;
 
-    use const Brain\Games\Engine\NUMBER_ROUNDS;
-
-function runGameCalc(): void
+function runGameCalc():void
 {
-    $nameUser = sayHello();
-
-    line('What is the result of the expression?');
+    $mainQuestion = 'What is the result of the expression?';
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
         $randNum = dataGenerator();
         if ($randNum[2] === 1) {
@@ -24,7 +18,7 @@ function runGameCalc(): void
         } else {
             $operand = '*';
         }
-        line('Question: %s %s %s', $randNum[0], $operand, $randNum[1]);
+            $question = "Question: $randNum[0] $operand $randNum[1]";
         if ($operand === '+') {
             $correctAnswer = strval($randNum[0] + $randNum[1]);
         } elseif ($operand === '-') {
@@ -32,10 +26,7 @@ function runGameCalc(): void
         } else {
             $correctAnswer = strval($randNum[0] * $randNum[1]);
         }
-        $answerUser = prompt('Your answer');
-        returnResult($nameUser, $correctAnswer, $answerUser);
-        if ($i === NUMBER_ROUNDS - 1) {
-            line('Congratulations, %s!', $nameUser);
-        }
+            $data[]= [$question, $correctAnswer];
     }
+    task($mainQuestion, $data);
 }

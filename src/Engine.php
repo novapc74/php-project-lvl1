@@ -7,7 +7,7 @@ use function cli\prompt;
 
 const NUMBER_ROUNDS = 3;
 
-function sayHello(): string
+function sayHello(): string //приветствие, имя пользователя.
 {
     line('Welcome to the Brain Games!');
     $nameUser = prompt('May I have your name?');
@@ -15,13 +15,14 @@ function sayHello(): string
     return ($nameUser);
 }
 
-function dataGenerator(): array
+function dataGenerator(): array //генератор случайных данных
 {
     $randFirstNum = rand(2, 10);
     $randSecondNum = rand(1, 10);
-    $randOperand = rand(1, 3); //   <<<--- заложено для calc.php, генерировать операнды
+    $randOperand = rand(1, 3); // генератор операндов
     $randArray = [];
-    $randArray[0] = $randSecondNum;
+    $randArray[0] = $randSecondNum; // задаем начало массива
+    //ниже ограничил длинну массива для простоты расчета правильных ответов
     for ($i = 0; $i < 9; $i++) {
         $randArray[] = $randFirstNum + $randArray[$i];
     }
@@ -29,13 +30,20 @@ function dataGenerator(): array
     return($arrData);
 }
 
-function returnResult(string $nameUser, string $correctAnswer, string $answerUser): void
+function task($mainQuestion, array $data):void
 {
-    if ($correctAnswer != $answerUser) {
-        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answerUser, $correctAnswer);
-        line("Let's try again, %s!", $nameUser);
+    $nameUser = sayHello();
+    line($mainQuestion);
+    foreach ($data as $value) {
+        line($value[0]);
+        $answerUser = prompt('Your answer');
+        if ($value[1] != $answerUser) {
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answerUser, $value[1]);
+            line("Let's try again, %s!", $nameUser);
             exit;
-    } elseif ($correctAnswer === $answerUser) {
-        line('Correct!');
+        } elseif ($value[0] === $answerUser) {
+            line('Correct!');
+        }
     }
+    line('Congratulations, %s!', $nameUser);
 }
