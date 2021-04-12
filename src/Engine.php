@@ -30,7 +30,7 @@ function dataGenerator(): array //генератор случайных данн
     return($arrData);
 }
 
-function task($mainQuestion, $data): void
+function task(string $mainQuestion, array $data): void
 {
     $nameUser = sayHello();
     line($mainQuestion);
