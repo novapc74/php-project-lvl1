@@ -9,6 +9,7 @@
 
 ### Install:
 ~$ get clone https://github.com/novapc74/php-project-lvl1
+
 ~$ apt install make
 
 ### How to play:
