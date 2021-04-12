@@ -42,7 +42,7 @@ function task($mainQuestion, $data): void
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answerUser, $value[1]);
             line("Let's try again, %s!", $nameUser);
-            return 0;
+            exit;
         }
     }
     line('Congratulations, %s!', $nameUser);
