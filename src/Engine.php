@@ -30,19 +30,19 @@ function dataGenerator(): array //генератор случайных данн
     return($arrData);
 }
 
-function task($mainQuestion, array $data):void
+function task($mainQuestion, array $data): void
 {
     $nameUser = sayHello();
     line($mainQuestion);
     foreach ($data as $value) {
         line($value[0]);
         $answerUser = prompt('Your answer');
-        if ($value[1] != $answerUser) {
+        if ($value[1] === $answerUser) {
+            line('Correct!');
+        } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answerUser, $value[1]);
             line("Let's try again, %s!", $nameUser);
             exit;
-        } elseif ($value[0] === $answerUser) {
-            line('Correct!');
         }
     }
     line('Congratulations, %s!', $nameUser);

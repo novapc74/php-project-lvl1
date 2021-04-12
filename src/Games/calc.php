@@ -4,9 +4,10 @@ namespace Brain\Games\Calc;
 
 use function Brain\Games\Engine\dataGenerator;
 use function Brain\Games\Engine\task;
+
 use const Brain\Games\Engine\NUMBER_ROUNDS;
 
-function runGameCalc():void
+function runGameCalc(): void
 {
     $mainQuestion = 'What is the result of the expression?';
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
@@ -26,7 +27,7 @@ function runGameCalc():void
         } else {
             $correctAnswer = strval($randNum[0] * $randNum[1]);
         }
-            $data[]= [$question, $correctAnswer];
+            $data[] = [$question, $correctAnswer];
     }
     task($mainQuestion, $data);
 }
