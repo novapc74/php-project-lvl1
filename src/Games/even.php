@@ -9,6 +9,7 @@ use const Brain\Games\Engine\NUMBER_ROUNDS;
 
 function runGameEven(): void
 {
+    $data = [];
     $mainQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
         $randNum = dataGenerator();

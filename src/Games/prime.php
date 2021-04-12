@@ -9,6 +9,7 @@ use const Brain\Games\Engine\NUMBER_ROUNDS;
 
 function runGamePrime(): void
 {
+    $data = [];
     $mainQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no"';
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
         $randNum = dataGenerator();

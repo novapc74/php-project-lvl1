@@ -9,6 +9,7 @@ use const Brain\Games\Engine\NUMBER_ROUNDS;
 
 function runGameProgression(): void
 {
+    $data = [];
     $mainQuestion = 'What number is missing in the progression?';
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
         $randNum = dataGenerator();

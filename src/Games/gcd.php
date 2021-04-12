@@ -9,6 +9,7 @@ use const Brain\Games\Engine\NUMBER_ROUNDS;
 
 function runGameGcd(): void
 {
+    $data = [];
     $mainQuestion = 'Find the greatest common divisor of given numbers.';
     for ($k = 0; $k < NUMBER_ROUNDS; $k++) {
         $randNum = dataGenerator();

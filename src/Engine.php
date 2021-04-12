@@ -30,7 +30,7 @@ function dataGenerator(): array //генератор случайных данн
     return($arrData);
 }
 
-function task($mainQuestion, array $data): void
+function task($mainQuestion, $data): void
 {
     $nameUser = sayHello();
     line($mainQuestion);
@@ -42,7 +42,7 @@ function task($mainQuestion, array $data): void
         } else {
             line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answerUser, $value[1]);
             line("Let's try again, %s!", $nameUser);
-            exit;
+            return 0;
         }
     }
     line('Congratulations, %s!', $nameUser);

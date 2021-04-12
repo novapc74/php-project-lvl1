@@ -9,6 +9,7 @@ use const Brain\Games\Engine\NUMBER_ROUNDS;
 
 function runGameCalc(): void
 {
+    $data = [];
     $mainQuestion = 'What is the result of the expression?';
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
         $randNum = dataGenerator();
