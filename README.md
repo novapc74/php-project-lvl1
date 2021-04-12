@@ -7,6 +7,12 @@
 ### Linter:
 [![Linter](https://github.com/novapc74/php-project-lvl1/actions/workflows/linter.yml/badge.svg)](https://github.com/novapc74/php-project-lvl1/actions/workflows/linter.yml)
 
+### Install:
+~$ get clone https://github.com/novapc74/php-project-lvl1
+~$ apt install make
+
+### How to play:
+
 ### asciinema brain-games:
 https://asciinema.org/a/zIRSN3QtrQo03JFtZJHlYUVHv
 
