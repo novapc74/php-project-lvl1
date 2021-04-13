@@ -4,10 +4,15 @@ namespace Brain\Games\Engine;
 
 use function cli\line;
 use function cli\prompt;
+use function Brain\Games\Even\even;
+use function Brain\Games\Calc\calc;
+use function Brain\Games\Gcd\gcd;
+use function Brain\Games\Prime\prime;
+use function Brain\Games\Progression\progression;
 
 const NUMBER_ROUNDS = 3;
 
-function sayHello(): string //приветствие, имя пользователя.
+function sayHello()
 {
     line('Welcome to the Brain Games!');
     $nameUser = prompt('May I have your name?');
@@ -15,34 +20,57 @@ function sayHello(): string //приветствие, имя пользоват�
     return ($nameUser);
 }
 
-function dataGenerator(): array //генератор случайных данных
-{
-    $randFirstNum = rand(2, 10);
-    $randSecondNum = rand(1, 10);
-    $randOperand = rand(1, 3); // генератор операндов
-    $randArray = [];
-    $randArray[0] = $randSecondNum; // задаем начало массива
-    //ниже ограничил длинну массива для простоты расчета правильных ответов
-    for ($i = 0; $i < 9; $i++) {
-        $randArray[] = $randFirstNum + $randArray[$i];
-    }
-    $arrData = [$randFirstNum, $randSecondNum, $randOperand, $randArray];
-    return($arrData);
-}
-
-function task(string $mainQuestion, array $data): void
+function runGame($games)
 {
     $nameUser = sayHello();
+    switch ($games) {
+        case 'calc':
+            $data = calc();
+            break;
+        case 'even':
+            $data = even();
+            break;
+        case 'gcd':
+            $data = gcd();
+            break;
+        case 'prime':
+            $data = prime();
+            break;
+        case 'progression':
+            $data = progression();
+            break;
+    }
+    $mainQuestion = $data[0];
     line($mainQuestion);
-    foreach ($data as $value) {
-        line($value[0]);
-        $answerUser = prompt('Your answer');
-        if ($value[1] === $answerUser) {
-            line('Correct!');
-        } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answerUser, $value[1]);
-            line("Let's try again, %s!", $nameUser);
-            exit;
+    for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
+        foreach ($data as $value) {
+            switch ($games) {
+                case 'calc':
+                    $data = calc();
+                    break;
+                case 'even':
+                    $data = even();
+                    break;
+                case 'gcd':
+                    $data = gcd();
+                    break;
+                case 'prime':
+                    $data = prime();
+                    break;
+                case 'progression':
+                    $data = progression();
+                    break;
+            }
+            line($data[1]);
+            $answerUser = prompt('Your answer');
+            if ($data[2] === $answerUser) {
+                line('Correct!');
+                break;
+            } else {
+                line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answerUser, $data[2]);
+                line("Let's try again, %s!", $nameUser);
+                exit;
+            }
         }
     }
     line('Congratulations, %s!', $nameUser);

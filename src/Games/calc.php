@@ -2,33 +2,27 @@
 
 namespace Brain\Games\Calc;
 
-use function Brain\Games\Engine\dataGenerator;
-use function Brain\Games\Engine\task;
-
-use const Brain\Games\Engine\NUMBER_ROUNDS;
-
-function runGameCalc(): void
+function calc(): array
 {
-    $data = [];
     $mainQuestion = 'What is the result of the expression?';
-    for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
-        $randNum = dataGenerator();
-        if ($randNum[2] === 1) {
-            $operand = '+';
-        } elseif ($randNum[2] === 2) {
-            $operand = '-';
-        } else {
-            $operand = '*';
-        }
-            $question = "Question: $randNum[0] $operand $randNum[1]";
-        if ($operand === '+') {
-            $correctAnswer = strval($randNum[0] + $randNum[1]);
-        } elseif ($operand === '-') {
-            $correctAnswer = strval($randNum[0] - $randNum[1]);
-        } else {
-            $correctAnswer = strval($randNum[0] * $randNum[1]);
-        }
-            $data[] = [$question, $correctAnswer];
+    $randFirstNum = rand(0, 10);
+    $randSecondNum = rand(0, 10);
+    $randOperand = rand(1, 3);
+    if ($randOperand === 1) {
+        $operand = '+';
+    } elseif ($randOperand === 2) {
+        $operand = '-';
+    } else {
+        $operand = '*';
     }
-    task($mainQuestion, $data);
+    $question = "Question: $randFirstNum $operand $randSecondNum";
+    if ($operand === '+') {
+        $correctAnswer = strval($randFirstNum + $randSecondNum);
+    } elseif ($operand === '-') {
+        $correctAnswer = strval($randFirstNum - $randSecondNum);
+    } else {
+        $correctAnswer = strval($randFirstNum * $randSecondNum);
+    }
+    $data = [$mainQuestion, $question, $correctAnswer];
+    return($data);
 }
