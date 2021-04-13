@@ -2,7 +2,7 @@
 
 namespace Brain\Games\Even;
 
-function even()
+function even(): array
 {
     $mainQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
     $randFirstNum = rand(0, 99);

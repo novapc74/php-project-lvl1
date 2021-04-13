@@ -12,7 +12,7 @@ use function Brain\Games\Progression\progression;
 
 const NUMBER_ROUNDS = 3;
 
-function sayHello()
+function sayHello(): string
 {
     line('Welcome to the Brain Games!');
     $nameUser = prompt('May I have your name?');
@@ -20,7 +20,7 @@ function sayHello()
     return ($nameUser);
 }
 
-function runGame($games)
+function runGame(string $games): void
 {
     $nameUser = sayHello();
     switch ($games) {
