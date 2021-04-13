@@ -22,6 +22,7 @@ function sayHello(): string
 
 function runGame(string $games): void
 {
+    $data = [];
     $nameUser = sayHello();
     switch ($games) {
         case 'calc':
