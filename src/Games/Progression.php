@@ -2,12 +2,13 @@
 
 namespace Brain\Games\Progression;
 
+use function Brain\Games\Engine\runGame;
+
 use const Brain\Games\Engine\NUMBER_ROUNDS;
 
 function progression(): array
 {
     $data = [];
-    $mainQuestion = 'What number is missing in the progression?';
     $randFirstNum = rand(2, 10);
     $randSecondNum = rand(1, 10);
     $randArray = [];
@@ -25,6 +26,16 @@ function progression(): array
     }
     $strArr = trim($strArr);
     $question = "Question: $strArr";
-    $data = [$mainQuestion, $question, $correctAnswer];
-    return($data);
+    $data = [$question, $correctAnswer];
+    return $data;
+}
+
+function runGameProgression(): void
+{
+    $mainQuestion = 'What number is missing in the progression?';
+    $arrQwest = [];
+    for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
+        $arrQwest[] = progression();
+    }
+    runGame($arrQwest, $mainQuestion);
 }
