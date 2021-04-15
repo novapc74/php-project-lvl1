@@ -15,7 +15,7 @@ function sayHello(): string
     return ($nameUser);
 }
 
-function runGame($arrQwest, $mainQuestion): void
+function runGame(array $arrQwest, string $mainQuestion): void
 {
     $nameUser = sayHello();
     line($mainQuestion);
