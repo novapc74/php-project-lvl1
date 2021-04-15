@@ -13,12 +13,16 @@ function calc(): array
     $randSecondNum = rand(0, 10);
     $randOperand = rand(0, 2);
     $question = "Question: $randFirstNum $arrOperand[$randOperand] $randSecondNum";
-    if ($arrOperand[$randOperand] === '+') {
-        $correctAnswer = strval($randFirstNum + $randSecondNum);
-    } elseif ($arrOperand[$randOperand] === '-') {
-        $correctAnswer = strval($randFirstNum - $randSecondNum);
-    } else {
-        $correctAnswer = strval($randFirstNum * $randSecondNum);
+    switch ($arrOperand[$randOperand]) {
+        case '+':
+            $correctAnswer = strval($randFirstNum + $randSecondNum);
+            break;
+        case '-':
+            $correctAnswer = strval($randFirstNum - $randSecondNum);
+            break;
+        case '*':
+            $correctAnswer = strval($randFirstNum * $randSecondNum);
+            break;
     }
     $data = [$question, $correctAnswer];
     return $data;
