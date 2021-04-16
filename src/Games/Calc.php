@@ -13,6 +13,7 @@ function calc(): array
     $randSecondNum = rand(0, 10);
     $randOperand = rand(0, 2);
     $question = "Question: $randFirstNum $arrOperand[$randOperand] $randSecondNum";
+    $correctAnswer = [];
     switch ($arrOperand[$randOperand]) {
         case '+':
             $correctAnswer = strval($randFirstNum + $randSecondNum);
