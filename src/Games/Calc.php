@@ -6,17 +6,17 @@ use function Brain\Games\Engine\runGame;
 
 use const Brain\Games\Engine\NUMBER_ROUNDS;
 
-function isCalc(int $randFirstNum, string $randOperand, int $randSecondNum): string
+function isCalc(int $randFirstNum, string $randOperand, int $randSecondNum): int
 {
     switch ($randOperand) {
         case '+':
-            return (strval($randFirstNum + $randSecondNum));
+            return ($randFirstNum + $randSecondNum);
             break;
         case '-':
-            return (strval($randFirstNum - $randSecondNum));
+            return ($randFirstNum - $randSecondNum);
             break;
         case '*':
-            return (strval($randFirstNum * $randSecondNum));
+            return ($randFirstNum * $randSecondNum);
             break;
     }
 }
@@ -31,7 +31,7 @@ function runGameCalc(): void
         $operands = ['+', '-', '*'];
         $randOperand = array_rand($operands);
         $question = "Question: $randFirstNum $operands[$randOperand] $randSecondNum";
-        $correctAnswer = isCalc($randFirstNum, $operands[$randOperand], $randSecondNum);
+        $correctAnswer = strval(isCalc($randFirstNum, $operands[$randOperand], $randSecondNum));
         $arrQwest[] = [$question, $correctAnswer];
     }
     runGame($arrQwest, $mainQuestion);
