@@ -6,13 +6,12 @@ use function Brain\Games\Engine\runGame;
 
 use const Brain\Games\Engine\NUMBER_ROUNDS;
 
-function even(): array
+function isEven($randNum): bool
 {
-    $randNum = rand(0, 99);
-    $question = "Question: {$randNum}";
-    $randNum % 2 === 0 ? $correctAnswer = "yes" : $correctAnswer = "no";
-    $data = [$question, $correctAnswer];
-    return $data;
+    if ($randNum % 2 === 0) {
+        return true;
+    }
+    return false;
 }
 
 function runGameEven(): void
@@ -20,7 +19,10 @@ function runGameEven(): void
     $mainQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
     $arrQwest = [];
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
-        $arrQwest[] = even();
+        $randNum = rand(0, 99);
+        $question = "Question: {$randNum}";
+        $correctAnswer = isEven($randNum) ? 'yes' : 'no';
+        $arrQwest[] = [$question, $correctAnswer];
     }
     runGame($arrQwest, $mainQuestion);
 }
