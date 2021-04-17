@@ -6,20 +6,17 @@ use function Brain\Games\Engine\runGame;
 
 use const Brain\Games\Engine\NUMBER_ROUNDS;
 
-function prime(): array
+function isPrime($randNum): bool
 {
-    $data = [];
-    $randNum = rand(2, 100);
-    $question = "Question: $randNum";
-    $q = 0;
-    for ($i = 1; $i < $randNum + 1; $i++) {
+    if ($randNum < 2) {
+        return false;
+    }
+    for ($i = 2; $i <= $randNum / 2; $i++) {
         if ($randNum % $i === 0) {
-            $q++;
+            return false;
         }
     }
-    $q > 2 ? $correctAnswer = 'no' : $correctAnswer = 'yes';
-    $data = [$question, $correctAnswer];
-    return $data;
+    return true;
 }
 
 function runGamePrime(): void
@@ -27,7 +24,10 @@ function runGamePrime(): void
     $mainQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no"';
     $arrQwest = [];
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
-        $arrQwest[] = prime();
+            $randNum = rand(0, 100);
+            $question = "Question: $randNum";
+            $correctAnswer = isPrime($randNum) ? 'yes' : 'no';
+            $arrQwest[] = [$question, $correctAnswer];
     }
     runGame($arrQwest, $mainQuestion);
 }
