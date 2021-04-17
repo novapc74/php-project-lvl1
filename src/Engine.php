@@ -19,13 +19,13 @@ function runGame(array $arrQwest, string $mainQuestion): void
 {
     $nameUser = sayHello();
     line($mainQuestion);
-    foreach ($arrQwest as $value) {
-        line($value[0]);
+    foreach ($arrQwest as [$question, $correctAnswer]) {
+        line($question);
         $answerUser = prompt('Your answer');
-        if ($value[1] === $answerUser) {
+        if ($correctAnswer === $answerUser) {
             line('Correct!');
         } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answerUser, $value[1]);
+            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answerUser, $correctAnswer);
             line("Let's try again, %s!", $nameUser);
             exit;
         }
