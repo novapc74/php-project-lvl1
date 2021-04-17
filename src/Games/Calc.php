@@ -6,18 +6,15 @@ use function Brain\Games\Engine\runGame;
 
 use const Brain\Games\Engine\NUMBER_ROUNDS;
 
-function isCalc(int $randFirstNum, string $randOperand, int $randSecondNum): int
+function isCalc(int $firstNum, string $operand, int $secondNum): int
 {
-    switch ($randOperand) {
+    switch ($operand) {
         case '+':
-            return ($randFirstNum + $randSecondNum);
-            break;
+            return ($firstNum + $secondNum);
         case '-':
-            return ($randFirstNum - $randSecondNum);
-            break;
+            return ($firstNum - $secondNum);
         case '*':
-            return ($randFirstNum * $randSecondNum);
-            break;
+            return ($firstNum * $secondNum);
     }
 }
 
