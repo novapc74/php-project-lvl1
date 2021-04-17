@@ -6,7 +6,7 @@ use function Brain\Games\Engine\runGame;
 
 use const Brain\Games\Engine\NUMBER_ROUNDS;
 
-function isPrime($randNum): bool
+function isPrime(int $randNum): bool
 {
     if ($randNum < 2) {
         return false;

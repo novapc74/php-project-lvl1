@@ -6,7 +6,7 @@ use function Brain\Games\Engine\runGame;
 
 use const Brain\Games\Engine\NUMBER_ROUNDS;
 
-function isCalc($randFirstNum, $randOperand, $randSecondNum): string
+function isCalc(int $randFirstNum, string $randOperand, int $randSecondNum): string
 {
     switch ($randOperand) {
         case '+':

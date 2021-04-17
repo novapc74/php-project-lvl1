@@ -6,20 +6,14 @@ use function Brain\Games\Engine\runGame;
 
 use const Brain\Games\Engine\NUMBER_ROUNDS;
 
-function gcd(): array
+function isGcd(int $firstNum, int $secondNum): string
 {
-    $randFirstNum = rand(1, 10);
-    $randSecondNum = rand(1, 10);
-    $question = "Question: $randFirstNum $randSecondNum";
-    $randFirstNum >= $randSecondNum ? $count = $randSecondNum : $count = $randFirstNum;
-    $correctAnswer = '';
-    for ($i = 1; $i < $count + 1; $i++) {
-        if (($randFirstNum % $i) === 0 && ($randSecondNum % $i === 0)) {
-            $correctAnswer = strval($i);
+    $firstNum >= $secondNum ? $count = $secondNum : $count = $firstNum;
+    for ($i = $count; $i >= 1; $i--) {
+        if ($firstNum % $i === 0 && $secondNum % $i === 0) {
+            return (strval($i));
         }
     }
-    $data = [$question, $correctAnswer];
-    return $data;
 }
 
 function runGameGcd(): void
@@ -27,7 +21,11 @@ function runGameGcd(): void
     $mainQuestion = 'Find the greatest common divisor of given numbers.';
     $arrQwest = [];
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
-        $arrQwest[] = gcd();
+        $randFirstNum = rand(1, 10);
+        $randSecondNum = rand(1, 10);
+        $question = "Question: $randFirstNum $randSecondNum";
+        $correctAnswer = isGcd($randFirstNum, $randSecondNum);
+        $arrQwest[] = [$question, $correctAnswer];
     }
     runGame($arrQwest, $mainQuestion);
 }
