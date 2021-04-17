@@ -8,14 +8,16 @@ use const Brain\Games\Engine\NUMBER_ROUNDS;
 
 function isCalc(int $firstNum, string $operand, int $secondNum): int
 {
-    $result = 0;
     switch ($operand) {
         case '+':
             $result = ($firstNum + $secondNum);
+            break;
         case '-':
             $result = ($firstNum - $secondNum);
         case '*':
+            break;
             $result = ($firstNum * $secondNum);
+            break;
     }
     return $result;
 }
