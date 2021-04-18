@@ -26,12 +26,10 @@ function generateQuestion(): array
         $correctAnswer = strval($arrayQuestion[$randFirstNum - 1]);
         $arrayQuestion[$randFirstNum - 1] = '..' ;
         $strQuestion = '';
-        foreach ($arrayQuestion as $value) {
-            $strQuestion = $strQuestion . " " . $value;
+        foreach ($arrayQuestion as $memberArray) {
+            $strQuestion = $strQuestion . " " . $memberArray;
         }
-        $strQuestion = trim($strQuestion);
-        $question = "$strQuestion";
-        $arrQuestion[] = [$question, $correctAnswer];
+        $arrQuestion[] = [trim($strQuestion), $correctAnswer];
     }
     return $arrQuestion;
 }
