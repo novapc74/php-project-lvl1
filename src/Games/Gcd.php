@@ -8,6 +8,7 @@ use const Brain\Games\Engine\NUMBER_ROUNDS;
 
 function isGcd(int $firstNum, int $secondNum): int
 {
+    $result = 1;
     $firstNum >= $secondNum ? $count = $secondNum : $count = $firstNum;
     for ($result = $count; $result >= 1; $result--) {
         if ($firstNum % $result === 0 && $secondNum % $result === 0) {
@@ -17,16 +18,22 @@ function isGcd(int $firstNum, int $secondNum): int
         return $result;
 }
 
-function runGameGcd(): void
+function generateQuestion(): array
 {
-    $mainQuestion = 'Find the greatest common divisor of given numbers.';
-    $arrQwest = [];
+    $arrQuestion = [];
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
         $randFirstNum = rand(1, 10);
         $randSecondNum = rand(1, 10);
         $question = "Question: $randFirstNum $randSecondNum";
         $correctAnswer = strval(isGcd($randFirstNum, $randSecondNum));
-        $arrQwest[] = [$question, $correctAnswer];
+        $arrQuestion[] = [$question, $correctAnswer];
     }
-    runGame($arrQwest, $mainQuestion);
+    return $arrQuestion;
+}
+
+function runGameGcd(): void
+{
+    $mainQuestion = 'Find the greatest common divisor of given numbers.';
+    $arrQuestion = generateQuestion();
+    runGame($arrQuestion, $mainQuestion);
 }

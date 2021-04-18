@@ -20,7 +20,7 @@ function runGame(array $arrQwest, string $mainQuestion): void
     $nameUser = sayHello();
     line($mainQuestion);
     foreach ($arrQwest as [$question, $correctAnswer]) {
-        line($question);
+        line("Question: $question");
         $answerUser = prompt('Your answer');
         if ($correctAnswer === $answerUser) {
             line('Correct!');
