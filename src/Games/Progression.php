@@ -16,7 +16,7 @@ function progression(int $randFirstNum, int $randSecondNum): array
     return $randArray;
 }
 
-function generateQuestion()
+function generateQuestion(): array
 {
     $arrQuestion = [];
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {

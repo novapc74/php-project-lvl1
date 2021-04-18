@@ -23,7 +23,7 @@ function isCalc(int $firstNum, string $operand, int $secondNum): int
     return $result;
 }
 
-function generateQuestion()
+function generateQuestion(): array
 {
     $arrQuestion = [];
     for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
