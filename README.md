@@ -15,19 +15,19 @@
 ### How to play:
 
 ### asciinema brain-games:
-https://asciinema.org/a/zIRSN3QtrQo03JFtZJHlYUVHv
+[![asciicast](https://asciinema.org/a/zIRSN3QtrQo03JFtZJHlYUVHv.svg)](https://asciinema.org/a/zIRSN3QtrQo03JFtZJHlYUVHv)
 
 ### asciinema brain-even:
-https://asciinema.org/a/m8KpitCmafVjQ90E6CMQx5EC1
+[![asciicast](https://asciinema.org/a/m8KpitCmafVjQ90E6CMQx5EC1.svg)](https://asciinema.org/a/m8KpitCmafVjQ90E6CMQx5EC1)
 
 ### asciinema brain-calc:
-https://asciinema.org/a/EVyW6LWkK3v1hF4hh1HVtLp7u
+[![asciicast](https://asciinema.org/a/EVyW6LWkK3v1hF4hh1HVtLp7u.svg)](https://asciinema.org/a/EVyW6LWkK3v1hF4hh1HVtLp7u)
 
 ### asciinema brain-gcd:
-https://asciinema.org/a/TxFaSqwa3JjExZ7yFC0vDON86
+[![asciicast](https://asciinema.org/a/TxFaSqwa3JjExZ7yFC0vDON86.svg)](https://asciinema.org/a/TxFaSqwa3JjExZ7yFC0vDON86)
 
 ### asciinema brain-progression:
-https://asciinema.org/a/4yXyAjFbDvOA3OZfBoUlEZ8qq
+[![asciicast](https://asciinema.org/a/4yXyAjFbDvOA3OZfBoUlEZ8qq.svg)](https://asciinema.org/a/4yXyAjFbDvOA3OZfBoUlEZ8qq)
 
 ### asciinema brain-prime:
-https://asciinema.org/a/sjalAxsXb5Gugq9U0eSuN4SJv
+[![asciicast](https://asciinema.org/a/sjalAxsXb5Gugq9U0eSuN4SJv.svg)](https://asciinema.org/a/sjalAxsXb5Gugq9U0eSuN4SJv)
