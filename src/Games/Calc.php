@@ -25,7 +25,7 @@ function isCalc(int $firstNum, string $operand, int $secondNum): int
 
 function runGameCalc(): void
 {
-    $func = function () {
+    $func = function (): array {
         $randFirstNum = rand(0, 10);
         $randSecondNum = rand(0, 10);
         $operands = ['+', '-', '*'];

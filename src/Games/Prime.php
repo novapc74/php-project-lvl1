@@ -21,7 +21,7 @@ function isPrime(int $randNum): bool
 
 function runGamePrime(): void
 {
-    $func = function () {
+    $func = function (): array {
         $randNum = rand(0, 100);
         $question = "Question: $randNum";
         $correctAnswer = isPrime($randNum) ? 'yes' : 'no';

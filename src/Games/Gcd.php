@@ -20,7 +20,7 @@ function isGcd(int $firstNum, int $secondNum): int
 
 function runGameGcd(): void
 {
-    $func = function () {
+    $func = function (): array {
         $randFirstNum = rand(1, 10);
         $randSecondNum = rand(1, 10);
         $question = "Question: $randFirstNum $randSecondNum";

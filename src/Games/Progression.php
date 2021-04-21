@@ -18,7 +18,7 @@ function progression(int $randFirstNum, int $randSecondNum): array
 
 function runGameProgression(): void
 {
-    $func = function () {
+    $func = function (): array {
         $randFirstNum = rand(2, 10);
         $randSecondNum = rand(1, 10);
         $arrayQuestion = progression($randFirstNum, $randSecondNum);
