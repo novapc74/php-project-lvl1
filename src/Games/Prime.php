@@ -19,21 +19,15 @@ function isPrime(int $randNum): bool
     return true;
 }
 
-function generateQuestion(): array
+function runGamePrime(): void
 {
-    $arrQuestion = [];
-    for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
+    $func = function () {
         $randNum = rand(0, 100);
         $question = "Question: $randNum";
         $correctAnswer = isPrime($randNum) ? 'yes' : 'no';
-        $arrQuestion[] = [$question, $correctAnswer];
-    }
-    return $arrQuestion;
-}
-
-function runGamePrime(): void
-{
+        $arrQuestion = [$question, $correctAnswer];
+        return $arrQuestion;
+    };
     $mainQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-    $arrQuestion = generateQuestion();
-    runGame($arrQuestion, $mainQuestion);
+    runGame($func, $mainQuestion);
 }

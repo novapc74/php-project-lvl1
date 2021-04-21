@@ -23,24 +23,18 @@ function isCalc(int $firstNum, string $operand, int $secondNum): int
     return $result;
 }
 
-function generateQuestion(): array
+function runGameCalc(): void
 {
-    $arrQuestion = [];
-    for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
+    $func = function () {
         $randFirstNum = rand(0, 10);
         $randSecondNum = rand(0, 10);
         $operands = ['+', '-', '*'];
         $randOperand = array_rand($operands);
         $question = "$randFirstNum $operands[$randOperand] $randSecondNum";
         $correctAnswer = strval(isCalc($randFirstNum, $operands[$randOperand], $randSecondNum));
-        $arrQuestion[] = [$question, $correctAnswer];
-    }
-    return $arrQuestion;
-}
-
-function runGameCalc(): void
-{
+        $arrQuestion = [$question, $correctAnswer];
+        return $arrQuestion;
+    };
     $mainQuestion = 'What is the result of the expression?';
-    $arrQuestion = generateQuestion();
-    runGame($arrQuestion, $mainQuestion);
+    runGame($func, $mainQuestion);
 }

@@ -16,10 +16,9 @@ function progression(int $randFirstNum, int $randSecondNum): array
     return $randArray;
 }
 
-function generateQuestion(): array
+function runGameProgression(): void
 {
-    $arrQuestion = [];
-    for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
+    $func = function () {
         $randFirstNum = rand(2, 10);
         $randSecondNum = rand(1, 10);
         $arrayQuestion = progression($randFirstNum, $randSecondNum);
@@ -29,14 +28,9 @@ function generateQuestion(): array
         foreach ($arrayQuestion as $memberArray) {
             $strQuestion = $strQuestion . " " . $memberArray;
         }
-        $arrQuestion[] = [trim($strQuestion), $correctAnswer];
-    }
-    return $arrQuestion;
-}
-
-function runGameProgression(): void
-{
+        $arrQuestion = [trim($strQuestion), $correctAnswer];
+        return $arrQuestion;
+    };
     $mainQuestion = 'What number is missing in the progression?';
-    $arrQuestion = generateQuestion();
-    runGame($arrQuestion, $mainQuestion);
+    runGame($func, $mainQuestion);
 }

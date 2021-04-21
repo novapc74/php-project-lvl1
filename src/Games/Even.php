@@ -14,21 +14,15 @@ function isEven(int $randNum): bool
     return false;
 }
 
-function generateQuestion(): array
+function runGameEven(): void
 {
-    $arrQuestion = [];
-    for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
+    $func = function () {
         $randNum = rand(0, 99);
         $question = "$randNum";
         $correctAnswer = isEven($randNum) ? 'yes' : 'no';
-        $arrQuestion[] = [$question, $correctAnswer];
-    }
-    return $arrQuestion;
-}
-
-function runGameEven(): void
-{
+        $arrQuestion = [$question, $correctAnswer];
+        return $arrQuestion;
+    };
     $mainQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
-    $arrQuestion = generateQuestion();
-    runGame($arrQuestion, $mainQuestion);
+    runGame($func, $mainQuestion);
 }

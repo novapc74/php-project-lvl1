@@ -18,22 +18,16 @@ function isGcd(int $firstNum, int $secondNum): int
         return $result;
 }
 
-function generateQuestion(): array
+function runGameGcd(): void
 {
-    $arrQuestion = [];
-    for ($i = 0; $i < NUMBER_ROUNDS; $i++) {
+    $func = function () {
         $randFirstNum = rand(1, 10);
         $randSecondNum = rand(1, 10);
         $question = "Question: $randFirstNum $randSecondNum";
         $correctAnswer = strval(isGcd($randFirstNum, $randSecondNum));
-        $arrQuestion[] = [$question, $correctAnswer];
-    }
-    return $arrQuestion;
-}
-
-function runGameGcd(): void
-{
+        $arrQuestion = [$question, $correctAnswer];
+        return $arrQuestion;
+    };
     $mainQuestion = 'Find the greatest common divisor of given numbers.';
-    $arrQuestion = generateQuestion();
-    runGame($arrQuestion, $mainQuestion);
+    runGame($func, $mainQuestion);
 }
