@@ -6,35 +6,34 @@ use function Brain\Games\Engine\runGame;
 
 use const Brain\Games\Engine\NUMBER_ROUNDS;
 
-function isCalc(int $firstNum, string $operand, int $secondNum): int
+function getResultCalc(int $firstNum, string $operations, int $secondNum): int
 {
-    $result = 0;
-    switch ($operand) {
+    switch ($operations) {
         case '+':
-            $result = ($firstNum + $secondNum);
+            $resultCalc = ($firstNum + $secondNum);
             break;
         case '-':
-            $result = ($firstNum - $secondNum);
+            $resultCalc = ($firstNum - $secondNum);
             break;
         case '*':
-            $result = ($firstNum * $secondNum);
+            $resultCalc = ($firstNum * $secondNum);
             break;
     }
-    return $result;
+    return $resultCalc;
 }
 
 function runGameCalc(): void
 {
-    $func = function (): array {
+    $makeDataGame = function (): array {
         $randFirstNum = rand(0, 10);
         $randSecondNum = rand(0, 10);
-        $operands = ['+', '-', '*'];
-        $randOperand = array_rand($operands);
-        $question = "$randFirstNum $operands[$randOperand] $randSecondNum";
-        $correctAnswer = strval(isCalc($randFirstNum, $operands[$randOperand], $randSecondNum));
-        $arrQuestion = [$question, $correctAnswer];
-        return $arrQuestion;
+        $operations = ['+', '-', '*'];
+        $randomOperation = array_rand($operations);
+        $question = "$randFirstNum $operations[$randomOperation] $randSecondNum";
+        $answer = strval(getResultCalc($randFirstNum, $operations[$randomOperation], $randSecondNum));
+        $dataGame = [$question, $answer];
+        return $dataGame;
     };
-    $mainQuestion = 'What is the result of the expression?';
-    runGame($func, $mainQuestion);
+    $task = 'What is the result of the expression?';
+    runGame($makeDataGame, $task);
 }

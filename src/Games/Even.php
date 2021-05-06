@@ -6,23 +6,20 @@ use function Brain\Games\Engine\runGame;
 
 use const Brain\Games\Engine\NUMBER_ROUNDS;
 
-function isEven(int $randNum): bool
+function isEven(int $randomNumber): bool
 {
-    if ($randNum % 2 === 0) {
-        return true;
-    }
-    return false;
+    return $randomNumber % 2 === 0;
 }
 
 function runGameEven(): void
 {
-    $func = function (): array {
-        $randNum = rand(0, 99);
-        $question = "$randNum";
-        $correctAnswer = isEven($randNum) ? 'yes' : 'no';
-        $arrQuestion = [$question, $correctAnswer];
-        return $arrQuestion;
+    $makeDataGame = function (): array {
+        $randomNumber = rand(0, 99);
+        $question = "$randomNumber";
+        $answer = isEven($randomNumber) ? 'yes' : 'no';
+        $dataGame = [$question, $answer];
+        return $dataGame;
     };
-    $mainQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
-    runGame($func, $mainQuestion);
+    $task = 'Answer "yes" if the number is even, otherwise answer "no".';
+    runGame($makeDataGame, $task);
 }

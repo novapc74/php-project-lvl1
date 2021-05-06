@@ -2,9 +2,12 @@
 
 namespace Brain\Games\Cli;
 
-use function Brain\Games\Engine\sayHello;
+use function cli\line;
+use function cli\prompt;
 
 function runBrainGames(): void
 {
-    sayHello();
+    line('Welcome to the Brain Games!');
+    $nameUser = prompt('May I have your name?');
+    line("Hello, %s!", $nameUser);
 }

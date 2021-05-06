@@ -6,31 +6,32 @@ use function Brain\Games\Engine\runGame;
 
 use const Brain\Games\Engine\NUMBER_ROUNDS;
 
-function progression(int $randFirstNum, int $randSecondNum): array
+function getProgression(int $stepProgression, int $startProgression): array
 {
-    $randArray = [];
-    $randArray[0] = $randSecondNum;
-    for ($q = 0; $q < 9; $q++) {
-        $randArray[] = $randFirstNum + $randArray[$q];
+    $randProgression = [];
+    $randProgression[0] = $startProgression;
+    $lengthProgression = 10;
+    for ($q = 0; $q < $lengthProgression - 1; $q++) {
+        $randProgression[] = $stepProgression + $randProgression[$q];
     }
-    return $randArray;
+    return $randProgression;
 }
 
 function runGameProgression(): void
 {
-    $func = function (): array {
-        $randFirstNum = rand(2, 10);
-        $randSecondNum = rand(1, 10);
-        $arrayQuestion = progression($randFirstNum, $randSecondNum);
-        $correctAnswer = strval($arrayQuestion[$randFirstNum - 1]);
-        $arrayQuestion[$randFirstNum - 1] = '..' ;
+    $makeDataGame = function (): array {
+        $stepProgression = rand(2, 10);
+        $startProgression = rand(1, 10);
+        $question = getProgression($stepProgression, $startProgression);
+        $answer = strval($question[$stepProgression - 1]);
+        $question[$stepProgression - 1] = '..' ;
         $strQuestion = '';
-        foreach ($arrayQuestion as $memberArray) {
-            $strQuestion = $strQuestion . " " . $memberArray;
+        foreach ($question as $itemProgression) {
+            $strQuestion = $strQuestion . " " . $itemProgression;
         }
-        $arrQuestion = [trim($strQuestion), $correctAnswer];
-        return $arrQuestion;
+        $dataGame = [trim($strQuestion), $answer];
+        return $dataGame;
     };
-    $mainQuestion = 'What number is missing in the progression?';
-    runGame($func, $mainQuestion);
+    $task = 'What number is missing in the progression?';
+    runGame($makeDataGame, $task);
 }

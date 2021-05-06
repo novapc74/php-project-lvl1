@@ -21,13 +21,13 @@ function isPrime(int $randNum): bool
 
 function runGamePrime(): void
 {
-    $func = function (): array {
+    $makeDataGame = function (): array {
         $randNum = rand(0, 100);
         $question = "Question: $randNum";
-        $correctAnswer = isPrime($randNum) ? 'yes' : 'no';
-        $arrQuestion = [$question, $correctAnswer];
-        return $arrQuestion;
+        $answer = isPrime($randNum) ? 'yes' : 'no';
+        $dataGame = [$question, $answer];
+        return $dataGame;
     };
-    $mainQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no"';
-    runGame($func, $mainQuestion);
+    $task = 'Answer "yes" if given number is prime. Otherwise answer "no"';
+    runGame($makeDataGame, $task);
 }
