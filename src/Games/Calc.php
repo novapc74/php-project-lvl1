@@ -8,19 +8,19 @@ use const Brain\Games\Engine\NUMBER_ROUNDS;
 
 function getResultCalc(int $firstNum, string $operations, int $secondNum): int
 {
-    $resultCalc = '';
+    $result = 0;
     switch ($operations) {
         case '+':
-            $resultCalc = ($firstNum + $secondNum);
+            $result = ($firstNum + $secondNum);
             break;
         case '-':
-            $resultCalc = ($firstNum - $secondNum);
+            $result = ($firstNum - $secondNum);
             break;
         case '*':
-            $resultCalc = ($firstNum * $secondNum);
+            $result = ($firstNum * $secondNum);
             break;
     }
-    return $resultCalc;
+    return $resultCalc = $result;
 }
 
 function runGameCalc(): void
