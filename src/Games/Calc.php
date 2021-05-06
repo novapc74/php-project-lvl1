@@ -8,6 +8,7 @@ use const Brain\Games\Engine\NUMBER_ROUNDS;
 
 function getResultCalc(int $firstNum, string $operations, int $secondNum): int
 {
+    $resultCalc = '';
     switch ($operations) {
         case '+':
             $resultCalc = ($firstNum + $secondNum);

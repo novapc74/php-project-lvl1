@@ -8,6 +8,7 @@ use const Brain\Games\Engine\NUMBER_ROUNDS;
 
 function getResultGcd(int $firstNum, int $secondNum): int
 {
+    $result = '';
     $firstNum >= $secondNum ? $count = $secondNum : $count = $firstNum;
     for ($result = $count; $result >= 1; $result--) {
         if ($firstNum % $result === 0 && $secondNum % $result === 0) {
